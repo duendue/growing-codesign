@@ -11,9 +11,9 @@ int lastheight=0;
 
 void setup () {
   // set the window size:
-  size(40, 400);        
+  fullScreen();        
 
-  myPort = new Serial(this, "COM5", 9600);  
+  myPort = new Serial(this, Serial.list()[2], 9600);  
 
   // A serialEvent() is generated when a newline character is received :
   myPort.bufferUntil('\n');
