@@ -15,7 +15,7 @@ void setup () {
   //size(500, 500);
   noCursor();
 
-  myPort = new Serial(this, Serial.list()[1], 9600);  
+  myPort = new Serial(this, Serial.list()[2], 9600);  
 
   // A serialEvent() is generated when a newline character is received :
   myPort.bufferUntil('\n');
@@ -25,9 +25,11 @@ void setup () {
   
   background(0);  // set inital background:
   
-  //text("0", 10, height/2);
+  /*
+  text("0", 10, height/2);
   text("300", 10, (height/2));
   text("400", 10, (height/3));
+  */
 }
 void draw () {
   if (newData) {
@@ -41,7 +43,7 @@ void draw () {
     
     loadPixels();
     for(int i = 0; i < pixels.length; i++){
-      if(i % width > 50 && i < pixels.length - 1) pixels[i]=pixels[i+1];
+      if(i % width != 0 && i < pixels.length - 1) pixels[i]=pixels[i+1];
       else pixels[i] = pixels[i]; //pixels[i] = color(0);
     }
     updatePixels();
