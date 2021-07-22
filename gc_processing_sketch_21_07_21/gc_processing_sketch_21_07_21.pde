@@ -12,6 +12,7 @@ int lastheight=0;
 void setup () {
   // set the window size:
   fullScreen();
+  noCursor();
 
   myPort = new Serial(this, Serial.list()[2], 9600);  
 
