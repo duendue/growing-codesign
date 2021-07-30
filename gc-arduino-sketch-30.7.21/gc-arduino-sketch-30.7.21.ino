@@ -72,7 +72,7 @@ void loop() {
 
   for (int i = 0; i < 3; i++) {
     // Blue, Green, Red
-    strip.setPixelColor(i, 55, 255, 0);
+    strip.setPixelColor(i, 255, 55, 0);
     strip.show();                     // Refresh strip
   }
 
